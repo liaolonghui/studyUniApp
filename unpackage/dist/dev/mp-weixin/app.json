@@ -1,31 +1,45 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/message/message"
+    "pages/member/member",
+    "pages/cart/cart",
+    "pages/news/news"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "绿色传说",
-    "navigationBarBackgroundColor": "#23f832",
-    "backgroundColor": "#000000",
-    "backgroundTextStyle": "light",
-    "enablePullDownRefresh": true
+    "navigationBarTitleText": "龙辉商城",
+    "navigationBarBackgroundColor": "#b50e03",
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
     "color": "#666",
-    "selectedColor": "#4CD964",
+    "selectedColor": "#b50e03",
     "borderStyle": "black",
     "list": [
       {
         "text": "首页",
         "pagePath": "pages/index/index",
-        "iconPath": "static/logo.png",
-        "selectedIconPath": "static/logo.png"
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-active.png"
       },
       {
-        "text": "消息",
-        "pagePath": "pages/message/message"
+        "text": "资讯",
+        "pagePath": "pages/news/news",
+        "iconPath": "static/icon/news.png",
+        "selectedIconPath": "static/icon/news-active.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/icon/cart.png",
+        "selectedIconPath": "static/icon/cart-active.png"
+      },
+      {
+        "text": "会员",
+        "pagePath": "pages/member/member",
+        "iconPath": "static/icon/member.png",
+        "selectedIconPath": "static/icon/member-active.png"
       }
     ]
   },

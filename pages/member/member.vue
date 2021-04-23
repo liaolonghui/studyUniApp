@@ -1,6 +1,6 @@
 <template>
 	<view class="message">
-		message
+		member
 	</view>
 </template>
 

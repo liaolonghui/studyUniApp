@@ -1,22 +1,22 @@
 <template>
-	<view class="content">
-		首页
+	<view>
+		cart
 	</view>
 </template>
 
 <script>
 	export default {
 		data() {
-			return {}
-		},
-		onLoad() {
-
+			return {
+				
+			}
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
 
 <style>
+
 </style>
