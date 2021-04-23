@@ -1,0 +1,44 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+		},
+		{
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarBackgroundColor": "red",
+				"navigationBarTitleText": "哈哈哈我是message",
+				"h5": {
+					"pullToRefresh": {
+						"color": "#ffff7f"
+					}
+				}
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "绿色传说",
+		"navigationBarBackgroundColor": "#23f832",
+		"backgroundColor": "#000000",
+		"backgroundTextStyle": "light",
+		"enablePullDownRefresh": true
+	},
+	"tabBar": {
+		"color": "#666",
+		"selectedColor": "#4CD964",
+		"borderStyle": "black",
+		"list": [
+			{
+				"text": "首页",
+				"pagePath": "pages/index/index",
+				"iconPath": "static/logo.png",
+				"selectedIconPath": "static/logo.png"
+			},
+			{
+				"text": "消息",
+				"pagePath": "pages/message/message"
+			}
+		]
+	}
+}
