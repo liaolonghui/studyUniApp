@@ -7,19 +7,19 @@
 		</swiper>
 		<!-- nav -->
 		<view class="nav">
-			<view class="nav-item">
+			<view class="nav-item" @click="toNavPath('goods')">
 				<view class="iconfont icon-ziyuan"></view>
 				<text>黑马超市</text>
 			</view>
-			<view class="nav-item">
+			<view class="nav-item" @click="toNavPath('contact')">
 				<view class="iconfont icon-guanyuwomen"></view>
 				<text>联系我们</text>
 			</view>
-			<view class="nav-item">
+			<view class="nav-item" @click="toNavPath('pics')">
 				<view class="iconfont icon-tupian"></view>
 				<text>社区图片</text>
 			</view>
-			<view class="nav-item">
+			<view class="nav-item" @click="toNavPath('video')">
 				<view class="iconfont icon-shipin"></view>
 				<text>学习视频</text>
 			</view>
@@ -27,24 +27,17 @@
 		<!-- 推荐商品区 -->
 		<view class="hot-goods">
 			<view class="tit">推荐商品</view>
-			<view class="goods-list">
-				<view class="goods-item" v-for="item in goodsList" :key="item.goods_id">
-					<image :src="item.goods_big_logo"></image>
-					<view class="price">
-						<text>￥{{item.goods_price}}</text>
-						<text>￥{{item.goods_price+1000}}</text>
-					</view>
-					<view class="name">
-						{{item.goods_name}}
-					</view>
-				</view>
-			</view>
+			<GoodsList :goods="goodsList" />
 		</view>
 	</view>
 </template>
 
 <script>
+	import GoodsList from '../../components/GoodsList.vue'
 	export default {
+		components: {
+			GoodsList
+		},
 		data() {
 			return {
 				swiperList: [],
@@ -63,6 +56,12 @@
 			async getGoodsList () {
 				const goodsData = await this.$request("/goods/search")
 				this.goodsList = goodsData.data.message.goods
+			},
+			// nav的跳转
+			toNavPath(path) {
+				uni.navigateTo({
+					url: '/pages/'+path+'/'+path
+				})
 			}
 		}
 	}
@@ -108,46 +107,6 @@
 			letter-spacing: 40rpx;
 			background-color: #fff;
 			margin: 7rpx 0;
-		}
-		.goods-list {
-			padding: 0 15rpx;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			.goods-item {
-				width: 355rpx;
-				background-color: #fff;
-				margin: 10rpx 0;
-				padding: 20rpx;
-				box-sizing: border-box;
-				image {
-					width: 80%;
-					height: 300rpx;
-					display: block;
-					margin: auto;
-				}
-				.price {
-					height: 50rpx;
-					line-height: 50rpx;
-					text-align: center;
-					text:first-of-type {
-						color: $shop-color;
-						font-size: 30rpx;
-					}
-					text:last-of-type {
-						color: #bbb;
-						font-size: 28rpx;
-						margin-left: 10rpx;
-						text-decoration: line-through;
-					}
-				}
-				.name {
-					font-size: 30rpx;
-					line-height: 50rpx;
-					padding-top: 10rpx;
-					padding-bottom: 15rpx;
-				}
-			}
 		}
 	}
 </style>
