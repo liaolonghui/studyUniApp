@@ -1,1 +1,1 @@
-<view>contact</view>
+<view class="contact"><image class="img" src="../../static/gywmban.jpg"></image><view class="info"><view data-event-opts="{{[['tap',[['makePhoneCall',['$event']]]]]}}" bindtap="__e">联系电话：400-168-9090（点击拨打）</view><view>校区地址：浙江省杭州市下沙经济开发区4号大街187号盛泰时代山</view></view><map class="map" scale="{{scale}}" latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"></map></view>
