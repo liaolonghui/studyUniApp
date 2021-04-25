@@ -1,6 +1,6 @@
 <template>
 	<view class="goods-list">
-		<view class="goods-item" v-for="item in goods" :key="item.goods_id">
+		<view class="goods-item" v-for="item in goods" :key="item.goods_id" @click="toGoodsDetail(item.goods_id)">
 			<image :src="item.goods_big_logo"></image>
 			<view class="price">
 				<text>￥{{item.goods_price}}</text>
@@ -18,6 +18,14 @@
 		name:"GoodsList",
 		props: {
 			"goods": Array
+		},
+		methods: {
+			// 跳转至商品详情页
+			toGoodsDetail (goodsId) {
+				uni.navigateTo({
+					url: "/pages/goodsDetail/goodsDetail?goodsId=" + goodsId
+				})
+			}
 		}
 	}
 </script>

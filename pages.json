@@ -19,7 +19,7 @@
             "path" : "pages/news/news",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "新闻资讯（其实也是商品列表）",
                 "enablePullDownRefresh": false
             }
             
@@ -55,6 +55,14 @@
 				"navigationBarTitleText": "联系我们"
 			}
 		}
+        ,{
+            "path" : "pages/goodsDetail/goodsDetail",
+            "style" :                                                                                    
+            {
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
